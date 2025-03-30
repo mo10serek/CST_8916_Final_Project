@@ -1,0 +1,11 @@
+SELECT
+    IoTHub.ConnectionDeviceId AS DeviceId,
+    AVG(iceThickness) AS AvgIceThickness,
+    MAX(snowAccumulation) AS MAXSnowAccumulation,
+    System.Timestamp AS EventTime
+INTO
+    [output]
+FROM
+    [input]
+GROUP BY
+    IoTHub.ConnectionDeviceId, TumblingWindow(mins, 5)
