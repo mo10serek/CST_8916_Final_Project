@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.0.16">
+  <diagram name="Page-1" id="ArT994LrFw3XE_xMw0Ce">
+    <mxGraphModel dx="1043" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-1" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_temperature_sensor;" vertex="1" parent="1">
+          <mxGeometry x="100" y="150" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-2" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_temperature_sensor;" vertex="1" parent="1">
+          <mxGeometry x="100" y="390" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-3" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sensor;" vertex="1" parent="1">
+          <mxGeometry x="104" y="25" width="70" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-4" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sensor;" vertex="1" parent="1">
+          <mxGeometry x="104" y="270" width="70" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=0;endArrow=none;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-5" target="8WfJP4KEr_XjxLtAUVIh-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=0;endArrow=none;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-5" target="8WfJP4KEr_XjxLtAUVIh-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=1;startArrow=classic;startFill=0;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-5" target="8WfJP4KEr_XjxLtAUVIh-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=1;startArrow=classic;startFill=0;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-5" target="8WfJP4KEr_XjxLtAUVIh-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-5" target="8WfJP4KEr_XjxLtAUVIh-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-5" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/IoT_Hub.svg;" vertex="1" parent="1">
+          <mxGeometry x="340" y="220" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-6" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/iot/Stream_Analytics_Jobs.svg;" vertex="1" parent="1">
+          <mxGeometry x="550" y="220" width="82.07" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-7" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/BlobBlock.svg;" vertex="1" parent="1">
+          <mxGeometry x="750" y="220" width="83.33" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-8" value="sensor to measure&lt;div&gt;ice thickness&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="79" y="103" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-9" value="sensor to measure&lt;div&gt;surface temperature&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="74" y="228" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-10" value="sensor to measure&lt;div&gt;snow accumulation&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="74" y="343" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-11" value="sensor to measure&lt;div&gt;external temperature&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="75" y="473" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.014;entryY=0.495;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8WfJP4KEr_XjxLtAUVIh-6" target="8WfJP4KEr_XjxLtAUVIh-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-18" value="IoT hub to gain the data&amp;nbsp;&lt;div&gt;from the sensors and&amp;nbsp;&lt;/div&gt;&lt;div&gt;transfer it to the hub&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="288" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-19" value="Azure Stream Analytics&lt;div&gt;to process the incoming&lt;/div&gt;&lt;div&gt;data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="516.04" y="288" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8WfJP4KEr_XjxLtAUVIh-20" value="Azure Blob Storage&amp;nbsp;&lt;div&gt;to store the data&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="726.66" y="290" width="130" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
