@@ -18,10 +18,10 @@ The application used to run these programs is visual studios connected to a virt
 
 ### Azure IoT Hub Configuration
 
-go to the Azure portal website and first create your own group. The group name is SkatingMonitoring and the Region Should be Canada. Then make the IoT Hub and fill in the details in basics:
+go to the Azure portal website and first create your own group. The group name is CST_8916_Project and the Region Should be Canada. Then make the IoT Hub and fill in the details in basics:
 
 - **Subscription**: Select your subscription.
-- **Resource group**: Choose `SkatingMonitoring`.
+- **Resource group**: Choose `CST_8916_Project`.
 - **IoT hub name**: `cst8916iothub`.
 - **Region**: `Canada`
 - **Tier**: `Free`
@@ -29,14 +29,14 @@ go to the Azure portal website and first create your own group. The group name i
 
 Go to `Review + create` and click `Create`.
 
-After the IoT Hub is set up, go to the Device subtab in device management group tab. Then create 3 sensors by clicking the create button and name them sensor1, sensor2, sensor3. After creating the sensors, copy the primary connection string from each sensor and then use them in the program files to connect to them.
+After the IoT Hub is set up, go to the Device subtab in device management group tab. Then create 3 sensors by clicking the create button and name them sensor_Dow's_Lake, sensor_Fifth_Avenue, sensor_NAC. After creating the sensors, copy the primary connection string from each sensor and then use them in the program files to connect to them.
 
 ### Azure Stream Analytics Job
 
 In Azure portal, create a new Azure Stream Analytics Services and fill in basics:
 
 - **Subscription**: Select your subscription.
-- **Resource group**: Choose `SkatingMonitoring`.
+- **Resource group**: Choose `CST_8916_Project`.
 - **IoT hub name**: `cst8916streamanalytics`.
 - **Region**: `Canada`
 - **Hosting enviroment**: `Cloud`
@@ -72,7 +72,7 @@ The query above calculate the average ice thickness and the maximum snow accumul
 In Azure portal, create a storage account and fill in basics:
 
 - **Subscription**: Select your subscription.
-- **Resource group**: Choose `SkatingMonitoring`.
+- **Resource group**: Choose `CST_8916_Project`.
 - **IoT hub name**: `cst8916storageaccount`.
 - **Region**: `Canada`
 - **Primary service**: `Azure Blob Storage or Azure Data Lake Storage Gen 2`
@@ -86,7 +86,7 @@ Go to `Review + create` and click `Create`. After the storage account is created
 In order to run the each of the sensors is first is to make a virtual machine on Azure. To do that is to first click the Virtual machine service and then the create button. After that, fill in the following:
 
 - **Subscription**: Select your subscription.
-- **Resource group**: Choose `SkatingMonitoring`.
+- **Resource group**: Choose `CST_8916_Project`.
 - **Virtual machine name**: `cst8916VM`
 - **Image**: `Ubuntu Server 24.04 LTS - x64 Gen2`
 - **Size**: `B1s` (recommended `B2s`)
@@ -104,8 +104,8 @@ git clone https://github.com/mo10serek/CST_8916_Final_Project.git
 and go in your cloned repository. to run the sensors, you need to install python program and all the dependences. To do that write the following:
 
 ```
+sudo apt update  
 sudo apt upgrade
-apt install python3-venv
 sudo apt install python3-venv
 
 python3 -m venv venv
@@ -137,4 +137,6 @@ This shows that it calculates the average of the ice thickness and the max snow 
 
 ## Reflection
 
-This assignment helps me to understand how to how to run real time applications on Azure. The only challenge I have is setting up how to run the sensors scripts with the dependences. To run the scripts with the dependences, I need to add a requirement.txt file with the dependence `azure-iot-device`. However, I need to run the scripts in Linux, so I made a virtual machine in Azure. Another problem is that I need to run install python in the virtual machine, so I look for a solution on how to install python in Linux. After I figure out all these problems. I can run the scripts well. 
+This assignment helps me to understand how to how to run real time applications on Azure. The challenge I have of developing is setting up on how to run the sensors scripts with the dependences. To run the scripts with the dependences, I need to add a requirement.txt file with the dependence `azure-iot-device`. However, I need to run the scripts in Linux, so I made a virtual machine in Azure. Another problem is that I need to run install python in the virtual machine, so I look for a solution on how to install python in Linux. After I figure out all these problems. I can run the scripts well. 
+
+The other challenge is that I need to test the application if it receives the correct values and the duration is correct. After the json file is added to the blob storage, I can tell that the application works but I need to make configurations to make sure that everything is working correctly. For example, I keep the application running to see if the 5 mins window works. Then I realized that there is a 10 mins window duration when the json file is updated. I can tell this by the time it was modified before it was update and after. To fix this I split the seconds from 300 seconds to 150 seconds in the TumblingWindow function. After the change, it updates every 5 mins based on the difference time of the modification. 
