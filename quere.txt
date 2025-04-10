@@ -8,4 +8,4 @@ INTO
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(mins, 5)
+    IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)
