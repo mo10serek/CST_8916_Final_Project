@@ -3,7 +3,7 @@ import random
 from datetime import datetime
 from azure.iot.device import IoTHubDeviceClient, Message
 
-CONNECTION_STRING = "Your IoT Hub device connection string here"
+CONNECTION_STRING = "HostName=cst8916iot.azure-devices.net;DeviceId=sensor_NAC;SharedAccessKey=cWuJkWHWOGpspUPxXgL9rRbmTKo/P2+W/4e/7QGOHlo="
 
 def get_telemetry():
     return {
