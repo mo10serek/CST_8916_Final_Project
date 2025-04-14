@@ -119,7 +119,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-After installing python, make the 3 sensors in IoT Hub that is explained in the Azure IoT Hub Configuration and then take the connection string from each of them and passed each corresponding python file. In the first terminal, run sensor1.py and you will see the list of sent messages. Then make two terminals and run:
+After installing python, make the 3 sensors in IoT Hub that is explained in the Azure IoT Hub Configuration and then take the connection string from each of them and passed each corresponding python file. In the first terminal, run sensor1.py by writing this `python sensor1.py` and you will see the list of sent messages. Then make two terminals and run:
 
 ```
 python3 -m venv venv
@@ -127,7 +127,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-In the two terminals, run the next two sensor scripts which are sensor2.py and sensor3.py and you will see that all sensors are running.
+In the two terminals, run the next two sensor scripts which are sensor2.py and sensor3.py by writing this commands in the terminal `python sensor2.py` and `python sensor3.py` and you will see that all sensors are running.
 
 ## Results
 
