@@ -14,7 +14,13 @@ For this assignment, we don't have any actual real-life sensors to gain the data
 
 Examples of a json payload generated displayed bellow:
 
-The application used to run these programs is visual studios connected to a virtual machine.
+Dow's Lake input json: {'location': "Dow's Lake", 'iceThickness': 21.512417583294933, 'surfaceTemperature': -17.137567162630468, 'snowAccumulation': 0.3813923841919098, 'externalTemperature': 9.756922964303065}
+
+Fifth Avenue input json: {'location': 'Fifth Avenue', 'iceThickness': 27.58296863561427, 'surfaceTemperature': 1.1192268630227673, 'snowAccumulation': 26.294000652504852, 'externalTemperature': -5.689651131845469}
+
+NAC input json: {'location': 'NAC', 'iceThickness': 15.478732317022917, 'surfaceTemperature': -17.805812979354045, 'snowAccumulation': 13.923450845067535, 'externalTemperature': -7.804805870454651}
+
+The application used to run these programs is visual studios connected to a virtual machine and all of the scripts are in python language.
 
 ### Azure IoT Hub Configuration
 
@@ -47,9 +53,9 @@ After creating the Stream Analytic service, you need to set up the following tab
 
 In the Input menu, select Add input and select IoT Hub. If you already made the IoT Hub in the same resource group, then it will detect it automatically. If not, create the IoT Hub service. Change the input alias to `input` so that queue job will detect it. After changing the alias, click save and go to the next part. 
 
-In the Output menu, select Add output and select Blob storage. If you already made the Blob storage in the same resource group, then it will detect it automatically. If not, create the Blob storage service. Change the input alias to `output` so that queue job will detect it. After changing the alias, click save and go to the next part. 
+In the Output menu, select Add output and select Blob storage. If you already made the Blob storage in the same resource group, then it will detect it automatically. If not, create the Blob storage service. Change the output alias to `output` so that queue job will detect it. After changing the alias, click save and go to the next part. 
 
-In the Query tab, this is where it takes the imputed values from the IoT device, process it with a queue and store the new values in the blob storage. Copy the content bellow and replace it with the default query:
+In the Query tab, this is where it takes the inputed values from the IoT device, process it with a queue and store the new values in the blob storage. Copy the content bellow and replace it with the default query:
 
 ```
 SELECT
@@ -62,10 +68,10 @@ INTO
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)
+    IoTHub.ConnectionDeviceId, TumblingWindow(second, 150)
 ```
 
-The query above calculate the average ice thickness and the maximum snow accumulation that it got it data from the IoT device. The incoming data is grouped by device id and goes over 5 mins or 300 seconds intervals. The JSON in the results displays the device id, average ice thickness, max snow accumulation, and event time and it goes to the blob storage.
+The query above calculate the average ice thickness and the maximum snow accumulation that it got it data from the IoT device. The incoming data is grouped by device id and goes over 5 mins or 150 seconds intervals. The JSON in the results displays the device id, average ice thickness, max snow accumulation, and event time and it goes to the blob storage.
 
 ### Azure Blob Storage
 
@@ -79,11 +85,11 @@ In Azure portal, create a storage account and fill in basics:
 - **Performance**: `Standard`
 - **Redundancy**: `Locally-redundant storage (LRS)`
 
-Go to `Review + create` and click `Create`. After the storage account is created, go to the Containers tab in the Data storage section and select `+ Container` and put the name iotoutput. The results from the Azure Blob Storage will go to the container in the blob storage as a json file. 
+Go to `Review + create` and click `Create`. After the storage account is created, go to the Containers tab in the Data storage section and select `+ Container` and put the name `iotoutput`. The results from the Azure Blob Storage will go to the container in the blob storage as a json file. 
 
 ## Running the IoT Sensor Simulation
 
-In order to run the each of the sensors is first is to make a virtual machine on Azure. To do that is to first click the Virtual machine service and then the create button. After that, fill in the following:
+In order to run the each of the sensors is first is to make a virtual machine on Azure. To do that is to first click the virtual machine service and then the create button. After that, fill in the following:
 
 - **Subscription**: Select your subscription.
 - **Resource group**: Choose `CST_8916_Project`.
@@ -121,7 +127,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-in the two terminals run the next two sensor scripts which are sensor2.py and sensor3.py and you will see that all sensors are running.
+In the two terminals, run the next two sensor scripts which are sensor2.py and sensor3.py and you will see that all sensors are running.
 
 ## Results
 
@@ -140,3 +146,5 @@ This shows that it calculates the average of the ice thickness and the max snow 
 This assignment helps me to understand how to how to run real time applications on Azure. The challenge I have of developing is setting up on how to run the sensors scripts with the dependences. To run the scripts with the dependences, I need to add a requirement.txt file with the dependence `azure-iot-device`. However, I need to run the scripts in Linux, so I made a virtual machine in Azure. Another problem is that I need to run install python in the virtual machine, so I look for a solution on how to install python in Linux. After I figure out all these problems. I can run the scripts well. 
 
 The other challenge is that I need to test the application if it receives the correct values and the duration is correct. After the json file is added to the blob storage, I can tell that the application works but I need to make configurations to make sure that everything is working correctly. For example, I keep the application running to see if the 5 mins window works. Then I realized that there is a 10 mins window duration when the json file is updated. I can tell this by the time it was modified before it was update and after. To fix this I split the seconds from 300 seconds to 150 seconds in the TumblingWindow function. After the change, it updates every 5 mins based on the difference time of the modification. 
+
+Also don't forget to delete the resource group ones you are done with the program
