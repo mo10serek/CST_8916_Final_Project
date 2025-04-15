@@ -14,11 +14,15 @@ For this assignment, we don't have any actual real-life sensors to gain the data
 
 Examples of a json payload generated displayed bellow:
 
+```
 Dow's Lake input json: {'location': "Dow's Lake", 'iceThickness': 21.512417583294933, 'surfaceTemperature': -17.137567162630468, 'snowAccumulation': 0.3813923841919098, 'externalTemperature': 9.756922964303065}
-
+```
+```
 Fifth Avenue input json: {'location': 'Fifth Avenue', 'iceThickness': 27.58296863561427, 'surfaceTemperature': 1.1192268630227673, 'snowAccumulation': 26.294000652504852, 'externalTemperature': -5.689651131845469}
-
+```
+```
 NAC input json: {'location': 'NAC', 'iceThickness': 15.478732317022917, 'surfaceTemperature': -17.805812979354045, 'snowAccumulation': 13.923450845067535, 'externalTemperature': -7.804805870454651}
+```
 
 The application used to run these programs is visual studios connected to a virtual machine and all of the scripts are in python language.
 
@@ -147,4 +151,4 @@ This assignment helps me to understand how to how to run real time applications 
 
 The other challenge is that I need to test the application if it receives the correct values and the duration is correct. After the json file is added to the blob storage, I can tell that the application works but I need to make configurations to make sure that everything is working correctly. For example, I keep the application running to see if the 5 mins window works. Then I realized that there is a 10 mins window duration when the json file is updated. I can tell this by the time it was modified before it was update and after. To fix this I split the seconds from 300 seconds to 150 seconds in the TumblingWindow function. After the change, it updates every 5 mins based on the difference time of the modification. 
 
-Also don't forget to delete the resource group ones you are done with the program
+Also don't forget to delete the resource group ones you are done with the program.
